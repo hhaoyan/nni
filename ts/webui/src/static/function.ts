@@ -250,6 +250,10 @@ function metricAccuracy(metric: MetricDataRecord): number {
     // return typeof data === 'number' ? data : NaN;
     if (typeof data === 'number') {
         return data;
+    } else if (typeof data.value === 'number') {
+        return data.value;
+    } else if (typeof data.result === 'number') {
+        return data.result;
     } else {
         return data.default;
     }
